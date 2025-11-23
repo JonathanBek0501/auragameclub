@@ -62,15 +62,15 @@ function renderRooms(){
     el.innerHTML = `
       <h3>${room.name}</h3>
       <div class="timer" id="${room.id}-timer">${formatElapsed(room.elapsed)}</div>
-      <div>Kopyuter vaqti: <span id="${room.id}-time-price">${calcTimePrice(room.elapsed)}</span> so'm</div>
-      <div class="items" id="${room.id}-items">${room.items.length? renderItemsText(room.items): '<em>No items</em>'}</div>
+      <div>Kompyuter vaqti: <span id="${room.id}-time-price">${calcTimePrice(room.elapsed)}</span> so'm</div>
+      <div class="items" id="${room.id}-items">${room.items.length? renderItemsText(room.items): '<em>Maxsulot olinmagan</em>'}</div>
       <div class="controls">
-        <button data-act="start" ${room.active? 'disabled':''}>Saqlash</button>
+        <button data-act="start" ${room.active? 'disabled':''}>Start</button>
         <button data-act="stop" ${room.active? '':'disabled'}>Stop</button>
         <button data-act="add" ${room.active? '':'disabled'}>Magazin</button>
         <button data-act="end" ${room.items.length||room.elapsed? '':'disabled'}>Tugatish</button>
       </div>
-      <div class="total">Total: <span id="${room.id}-total">${calcRoomTotal(room)}</span> so'm</div>
+      <div class="total">Jami: <span id="${room.id}-total">${calcRoomTotal(room)}</span> so'm</div>
     `;
     // attach handlers
     el.querySelectorAll('button').forEach(btn=>{
@@ -101,7 +101,7 @@ function renderArchive(){
   const el = document.getElementById('archiveList');
   el.innerHTML = '';
   if (!state.archive.length) {
-    el.innerHTML = '<em>No archived sessions</em>';
+    el.innerHTML = '<em>Arxivga olingan sessiyalar yo"q</em>';
     return;
   }
   state.archive.slice().reverse().forEach(a=>{
@@ -271,7 +271,7 @@ function deleteProduct(id){
 document.getElementById('resetAll').addEventListener('click',()=>{
   if (!confirm('Reset everything? This will clear localStorage for this app.')) return;
   localStorage.removeItem(STORAGE_KEY);
-  loadState(); saveState(); render();
+  location.reload();
 });
 
 // Archive export

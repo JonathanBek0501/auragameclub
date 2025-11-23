@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Computer Club — Cashier</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Computer Club — Cashier</h1>
+        <div class="meta">
+          Rate: <strong id="hourlyRate">10000</strong> so'm / hour
+        </div>
+      </header>
+
+      <main>
+        <section class="rooms" id="roomsContainer"></section>
+
+        <section class="side">
+          <div class="panel">
+            <h2>Maxsulotlar</h2>
+            <div id="productsList"></div>
+            <button id="showProductForm">Maxsulot qo'shish</button>
+            <div id="productForm" class="hidden">
+              <input id="prodName" placeholder="Name" />
+              <input id="prodPrice" placeholder="Price (so'm)" type="number" />
+              <button id="saveProduct">Saqlash</button>
+              <button id="cancelProduct">O'chirish</button>
+            </div>
+          </div>
+
+          <div class="panel">
+            <h2>Arxiv / Hisobot</h2>
+            <div id="archiveList"></div>
+            <button id="exportCSV">Excelga olish</button>
+            <button id="clearArchive">Arxivni o'chirish</button>
+          </div>
+
+          <div class="panel">
+            <h2>Tez bajariladigan ishlar</h2>
+            <button id="resetAll">Barcha Arxivni o'chirish</button>
+          </div>
+        </section>
+      </main>
+
+      <footer>
+        <small
+          >Ready-to-run local project. Save this folder and open
+          <code>index.html</code>.</small
+        >
+      </footer>
+    </div>
+
+    <!-- Add item modal -->
+    <div id="addItemModal" class="modal hidden">
+      <div class="modal-content">
+        <h3>Add product to <span id="modalRoomName"></span></h3>
+        <select id="modalProductSelect"></select>
+        <input id="modalQty" type="number" value="1" min="1" />
+        <button id="modalAddItem">Add</button>
+        <button id="modalClose">Close</button>
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>

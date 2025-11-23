@@ -1,0 +1,29 @@
+/* Simple styles for cashier app */
+:root{--bg:#f4f6f8;--card:#fff;--accent:#1f6feb;--muted:#6b7380}
+*{box-sizing:border-box;font-family:Inter,Segoe UI,Roboto,Arial}
+body{margin:0;background:var(--bg);color:#111}
+.container{max-width:1100px;margin:18px auto;padding:12px}
+header{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
+h1{margin:0;font-size:20px}
+.meta{color:var(--muted)}
+main{display:flex;gap:12px}
+.rooms{flex:1;display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.room{background:var(--card);padding:12px;border-radius:8px;box-shadow:0 1px 3px rgba(0,0,0,0.06)}
+.room h3{margin:0 0 8px 0}
+.room .timer{font-weight:700;margin-bottom:8px}
+.room .items{font-size:14px;margin-bottom:8px}
+.room .controls button{margin-right:6px}
+.side{width:320px;display:flex;flex-direction:column;gap:12px}
+.panel{background:var(--card);padding:10px;border-radius:8px;box-shadow:0 1px 3px rgba(0,0,0,0.06)}
+.panel h2{margin:0 0 8px 0;font-size:16px}
+#productsList .prod{display:flex;justify-content:space-between;margin-bottom:6px}
+button{background:var(--accent);border:none;color:#fff;padding:6px 8px;border-radius:6px;cursor:pointer}
+button:disabled{opacity:.6;cursor:default}
+.hidden{display:none !important}
+footer{margin-top:12px;text-align:center;color:var(--muted)}
+.modal{position:fixed;inset:0;background:rgba(0,0,0,0.4);display:flex;align-items:center;justify-content:center}
+.modal-content{background:var(--card);padding:12px;border-radius:8px;width:320px}
+input,select{padding:6px;border-radius:6px;border:1px solid #ddd;width:100%;margin-bottom:8px}
+.small-btn{background:#555;padding:4px 6px;border-radius:6px}
+.total{font-weight:700;margin-top:8px}
+.archive-item{display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px dashed #eee}

@@ -107,7 +107,7 @@ function renderArchive(){
   state.archive.slice().reverse().forEach(a=>{
     const d = document.createElement('div');
     d.className = 'archive-item';
-    d.innerHTML = `<div>${a.room} — ${new Date(a.end).toLocaleString()}</div><div>${a.total} so'm</div>`;
+    d.innerHTML = `<div>${a.room} — ${new Date(a.end).toLocaleString()}</div><div><strong>${a.total} so'm</strong></div>`;
     el.appendChild(d);
   });
 }
